@@ -1,8 +1,9 @@
 import {React, useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 
 import { uiCloseToggle } from '../../actions/ui';
-import { getTodos, todoClearActiveTodo, todoStartDelete, todoStartUpdate } from '../../actions/todos';
+import { todoStartDelete, todoStartUpdate } from '../../actions/todos';
 
 
 const initTodo = {
@@ -10,7 +11,8 @@ const initTodo = {
     name: '',
     description: '',
     createdAt: '',
-    completed: false
+    completed: false,
+    updatedAt: ''
 }
 
 
@@ -35,7 +37,7 @@ export const TodoToggleEdit = () => {
 
     const [formValues, setFormValues] = useState( initTodo );
 
-    const { id, name, description, createdAt, completed } = formValues;
+    const { id, name, description, createdAt, completed, updatedAt } = formValues;
 
     useEffect(() => {
 
@@ -85,6 +87,7 @@ export const TodoToggleEdit = () => {
         setFormValues(initTodo);
     }
 
+    const formatUpdatedAt = moment( updatedAt).calendar()
 
     return (
         <div className="toggle__main">
@@ -124,7 +127,7 @@ export const TodoToggleEdit = () => {
                     </div>
 
                     <div className="form-group">
-                        <span>Updated Today, 02:35 pm,<br/>
+                        <span>Updated {formatUpdatedAt},<br/>
                             by Peter Smith
                         </span>
                     </div>

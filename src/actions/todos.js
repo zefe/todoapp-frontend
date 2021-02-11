@@ -1,7 +1,7 @@
 import { types } from '../types/types';
-import TodoService from '../services/todoService';
 import Swal from 'sweetalert2';
 import todoService from '../services/todoService';
+import { prepareTodo, prepareNewTodo } from '../helpers/prepareTodos';
 
 
 export const getTodos = () => {
@@ -10,11 +10,14 @@ export const getTodos = () => {
         try{
 
             const res = await todoService.getAll()
-            let resData = res.data.data;
+            const resData = res.data.data;
+
+            //format createdAt and updatedAt
+            const todos = prepareTodo(resData);
 
             dispatch( {
                 type: types.todoLoaded,
-                payload: resData
+                payload: todos
             })
         }
         catch(e){
@@ -32,13 +35,11 @@ export const todoAddNew = ( todo ) => {
             const res = await todoService.create(todo)
             let resData = res.data.data;
 
-            dispatch( newTodo({
-                id: resData.id,
-                name: resData.name,
-                description: resData.description,
-                createdAt: resData.createdAt,
-                updatedAt: resData.updatedAt
-            }) )
+            //format createdAt and updatedAt todo
+            const newTodoFormated = prepareNewTodo(resData);
+            
+            dispatch( newTodo(newTodoFormated) )
+        
         }
         catch(e){
             console.log(e)
