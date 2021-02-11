@@ -1,0 +1,50 @@
+// button Add new
+.add__button {
+    width: 140px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    font-weight: 600;	
+    transition: color .6s ease;
+    border-radius: 0px;
+    cursor: pointer;
+    &:hover {
+        background-color: #F4F5F7;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+
+    @media (max-width: 768px)  {
+    }
+    
+    @media (max-width: 480px)  {
+        .add__button { 
+            margin: 0;
+        }
+    }
+}
+
+// button Add new
+.delete__button {
+    width: 150px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    font-weight: 600;	
+    transition: color .6s ease;
+    cursor: pointer;
+    background-color: $gray_dark;
+    &:hover {
+        background-color: #F4F5F7;
+    }
+
+    p {
+        margin-left: 3px;
+    }
+}
