@@ -9,6 +9,7 @@ In the project directory, you can run:
 ###   `Install`
 
 ```sh
+$ git clone https://github.com/zefe/todoapp-frontend.git
 $ cd todoapp-frontend
 $ npm install -d
 ```
@@ -22,9 +23,10 @@ You will also see any lint errors in the console.
 
 ### `Set environment variables`
 
-1.- Create the .env.development file with the varibles as shown in the following example
+1.- to change uri API, update the .env.development file in the root directory with the varibles as shown in the following example.
+    Default uri api is http://localhost:4000
 
 ```sh
 ## CONFIG
-$ REACT_APP_API_URL=http://localhost:4000
+$ REACT_APP_API_URL=
 ```
