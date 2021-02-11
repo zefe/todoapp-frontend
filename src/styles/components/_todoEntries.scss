@@ -1,0 +1,166 @@
+.entries__container {
+    width: 90%; 
+    background-color: $secondary;
+}
+
+.entries__container-table {
+    background-color: $white;
+    margin-top: 30px;
+    min-height: 70vh;
+}
+
+.entries-title h1{
+    margin-top: 10px;
+    color: $black;
+
+}
+
+.table-options { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: 2px solid $gray_dark;
+}
+.table__actions {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 60px 0 0;
+}
+
+.options__subtitle {
+    width: 30%;
+    padding-left: 40px;
+}
+.options__subtitle h3 {
+    color: $black;
+}
+
+
+.table__actions-filter {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid $gray_light;
+    color: $black;
+    margin-right: 15px;
+
+    input {
+        border: none;
+        background-color: none;
+    }
+}
+
+
+.table__head-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid $gray_dark;
+}
+.table__head-row span {
+    font-weight: 600;
+    color: $black;
+}
+
+.table__head-row span:first-child {
+    width: 7%;
+}
+
+.table__head-row span:nth-child(2) {
+    width: 20%;
+}
+.table__head-row span:nth-child(3) {
+    width: 20%;
+}
+
+.table__head-row span:last-child {
+    width: 50%;
+  }
+
+  .datepicker-toggle {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .datepicker-toggle-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/icon-calendar.svg');
+  }
+
+  .datepicker-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .datepicker-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  @media (max-width: 425px)  {
+    .table-options { 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        padding-top: 10px;
+    }
+    .table__actions {
+        margin:0;
+    }
+    .options__subtitle {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .table__actions {
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+        align-items: center;
+        input {
+            width: 160px;
+        }
+    }
+    .table__actions-filter {
+        margin: 0;
+    }
+    //Respnsive
+    .table__head-row span:first-child {
+        width: 20%;
+    }
+    
+    .table__head-row span:nth-child(2) {
+        width: 40%;
+    }
+    .table__head-row span:nth-child(3) {
+        width: 20%;
+    }
+    
+    .table__head-row span:last-child {
+        display: none;
+      }
+}
+
