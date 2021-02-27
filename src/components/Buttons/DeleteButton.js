@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as IconDelete } from '../../images/icon-delete.svg';
+import { ReactComponent as IconDelete } from '../../assets/icons/icon-delete.svg';
 
 export const DeleteButton = () => {
     return (
