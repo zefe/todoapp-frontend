@@ -2,6 +2,7 @@ import {React, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getTodos } from '../../actions/todos';
+import { Navbar } from '../Navbar/Navbar';
 import { TodoEntries } from './TodoEntries';
 import { TodoModal } from './TodoModal';
 import { TodoToggleEdit } from './TodoToggleEdit';
@@ -21,8 +22,8 @@ export const TodoScreen = () => {
     }, [dispatch])
 
     return (
-        <div className="todo__container" >
-            
+        <div className="todo__container " >
+            <Navbar />
             <TodoEntries 
                 todos={ todos }
             />

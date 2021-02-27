@@ -1,8 +1,13 @@
 .todo__container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;  
+    flex-flow: column;
     width: 100%;
     min-height: 100vh;
-    background-color: $secondary;
+    background-color: $background-view;
+}
+
+.navbar {
+    width:90%;
 }

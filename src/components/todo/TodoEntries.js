@@ -17,8 +17,6 @@ export const TodoEntries = ({ todos }) => {
     }
 
 
-
-
     return (
         <div className="entries__container">
             
