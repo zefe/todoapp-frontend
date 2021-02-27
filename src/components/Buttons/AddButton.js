@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as IconPlus } from '../../images/icon-circle-plus.svg';
+import { ReactComponent as IconPlus } from '../../assets/icons/icon-circle-plus.svg';
 
 export const IconButton = ({ openModal }) => {
     return (
