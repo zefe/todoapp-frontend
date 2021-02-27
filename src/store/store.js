@@ -7,7 +7,7 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 
 
 export const store = createStore(
-    rootReducer,
+    rootReducer, //All Reducers
     composeEnhancers(
         applyMiddleware( thunk )
     )

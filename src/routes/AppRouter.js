@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Router>
            <div>
                <Switch>
-                   <Route exact path="/" component={ TodoScreen } />
+                   <Route exact path="/" component={ LoginView } />
                    <Route exact path="/login" component={ LoginView } />
                    <Route exact path="/signup" component={ SignUpView } />
                    <Route component={ NotFound } />

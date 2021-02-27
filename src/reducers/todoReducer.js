@@ -50,12 +50,6 @@ export const todoReducer = ( state=initialState, action) => {
             }
 
         case types.todoDeleted:
-            console.log("1: ")
-            console.log(state)
-            console.log("2: ")
-            console.log(state.todos)
-            console.log("3: state.activeTodo.id")
-            console.log(state.activeTodo.id)
             return {
                 ...state,
                 todos: state.todos.filter(
