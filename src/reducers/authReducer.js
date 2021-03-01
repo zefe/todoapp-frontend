@@ -1,10 +1,9 @@
 import { types } from "../types/types";
 
-const initialState = {
+let initialState = {
     checking: true,
-    //uid: null,
-    //name: null
-    error: '',
+    errors: { },
+    error:''
 }
 
 export const authReducer = ( state=initialState, action) => {
@@ -14,13 +13,30 @@ export const authReducer = ( state=initialState, action) => {
         case types.authLogin:
             return {
                 ...state,
-                checking: false,
-                ...action.payload
+                ...action.payload,
+                checking: false
             }
         
         case types.errorMessage:
             return {
                 ...state, error: action.payload
+            }
+
+        case types.errorsMessages:
+            return {
+                ...state, errors: action.payload
+            }
+
+        case types.authCheckingFinish:
+            return {
+                ...state,
+                checking: false
+            }
+        case types.authLogout:
+            return {
+                errors:{},
+                error:'',
+                checking: false
             }
 
     

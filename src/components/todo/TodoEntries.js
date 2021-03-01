@@ -12,7 +12,6 @@ export const TodoEntries = ({ todos }) => {
 
 
     const openModal = (e) => {
-        console.log('Abrir modal')
         dispatch( uiOpenModal() );
     }
 

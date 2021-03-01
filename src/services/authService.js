@@ -5,7 +5,19 @@ const login = (data) => {
 };
 
 const signup = (data) => {
-  return axios.post("/api/auth/signup", data);
+  return axios.post(`/api/auth/signup`, data);
+};
+
+const renewToken = () => {
+
+  let token = localStorage.getItem('token') || '';
+
+
+  return axios.get(`/api/auth/renew`, {
+    headers: {
+      'x-token':token
+    }
+  });
 };
 
 
@@ -13,4 +25,5 @@ const signup = (data) => {
 export default {
     login,
     signup,
+    renewToken
   };

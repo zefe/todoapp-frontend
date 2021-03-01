@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { startLogin } from '../actions/auth';
 import { useForm } from "../hooks/useForm";
 
-export const LoginView = () => {
+export const LoginView = (props) => {
 
     const dispatch = useDispatch();
     const { error } = useSelector(state => state.auth);
     
-    console.log(error)
 
     const initialForm = {
         email: 'juan@test.com',
@@ -22,7 +22,10 @@ export const LoginView = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        dispatch(startLogin(email, password));
+
+        const { history } = props;
+
+        dispatch(startLogin(email, password, history));
     }
 
     return (
@@ -61,7 +64,7 @@ export const LoginView = () => {
                     <button className="btn btn-primary">Sign in</button>
                 </div>
                 <div className="form-link">
-                    <span>Don't have an Account?</span> <a href="#" >Sign Up</a>
+                    <span>Don't have an Account?</span> <Link to="/signup">Sign Up</Link>
                 </div>
             </form>
         </div>

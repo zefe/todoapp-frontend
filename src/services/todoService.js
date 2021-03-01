@@ -1,15 +1,33 @@
-import axios from './axios'
+import axios from './axios';
+import { config } from '../config/config';
 
-const getAll = () => {
-  return axios.get("/todos");
+const getAll = () => { 
+  
+  let token = localStorage.getItem('token') || '';
+
+  return axios.get("/api/todos", {
+    headers: {
+      'x-token':token
+    }
+  });
 };
 
 const get = id => {
   return axios.get(`/todos/${id}`);
 };
 
-const create = data => {
-  return axios.post("/todos", data);
+const create = (data) => {
+
+  let token = localStorage.getItem('token') || '';
+  console.log(token)
+  
+  return axios.post("/api/todos", data, {
+      headers: {
+        'x-token':token
+      }
+  }
+  );
+
 };
 
 const update = (id, data) => {

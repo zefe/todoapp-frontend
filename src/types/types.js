@@ -13,12 +13,13 @@ export const types = {
     todoUpdated: '[todo] updated',
     todoDeleted: '[todo] Todo deleted',
     
-    authCheking: '[auth] Checking login state',
-    authChekingFinish: '[auth] Finish Checking login state',
+    
+    authCheckingFinish: '[auth] Finish Checking login state',
     authStartLogin: '[auth] Start login ',
     authLogin: '[auth] Login',
 
     errorMessage: '[auth] Error',
+    errorsMessages: '[auth] All Errors',
 
     authStartRegister: '[auth] Start Register',
     authStartTokenRenew: '[auth] Start Token Renew',

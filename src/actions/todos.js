@@ -10,7 +10,7 @@ export const getTodos = () => {
         try{
 
             const res = await todoService.getAll()
-            const resData = res.data.data;
+            const resData = res.data.todos;
 
             //format createdAt and updatedAt
             const todos = prepareTodo(resData);
@@ -22,7 +22,7 @@ export const getTodos = () => {
         }
         catch(e){
             console.log(e)
-            Swal.fire('Error', "Something went wrong", 'error');
+            //Swal.fire('Error', "Something went wrong", 'error');
         }
 
     }
@@ -34,6 +34,7 @@ export const todoAddNew = ( todo ) => {
 
             const res = await todoService.create(todo)
             let resData = res.data.data;
+            console.log(res)
 
             //format createdAt and updatedAt todo
             const newTodoFormated = prepareNewTodo(resData);
@@ -42,7 +43,7 @@ export const todoAddNew = ( todo ) => {
         
         }
         catch(e){
-            console.log(e)
+            console.log(e.response)
             Swal.fire('Error', "Something went wrong", 'error');
         }
         
