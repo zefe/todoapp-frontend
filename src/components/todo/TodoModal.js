@@ -26,11 +26,11 @@ export const TodoModal = () => {
 
     //Hook useForm
     const [ formTodoValues, handleTodoInputChange, resetInputsForm ] = useForm({
-        name: '',
+        title: '',
         description: ''
     });
 
-    const { name, description } = formTodoValues;
+    const { title, description } = formTodoValues;
 
     const { modalOpen } = useSelector(state => state.ui);
 
@@ -56,7 +56,7 @@ export const TodoModal = () => {
     const handleSubmitForm = (e) => {
         e.preventDefault();
         
-        if ( name.trim().length < 2) {
+        if ( title.trim().length < 2) {
             setError(true);  
             setErrorMessage("The title is required");
             return
@@ -96,9 +96,9 @@ export const TodoModal = () => {
                         type="text" 
                         //className={ `form-control ${ !titleValid && 'is-invalid' } `}
                         className={ `form-control ${ error && 'is-invalid' } `}
-                        name="name"
+                        name="title"
                         autoComplete="off"
-                        value={ name }
+                        value={ title }
                         onChange={ handleTodoInputChange }
                     />
                     <small style={{color:'red'}}>{errorMessage}</small>

@@ -1,41 +1,29 @@
-import axios from './axios';
-import { config } from '../config/config';
+import { instance }  from './axios';
 
-const getAll = () => { 
+const AUTH_TOKEN = localStorage.getItem('token') || '';
+
+const getAll = () => {
   
-  let token = localStorage.getItem('token') || '';
+  return instance.get("/api/todos", { headers: {'x-token':AUTH_TOKEN} });
 
-  return axios.get("/api/todos", {
-    headers: {
-      'x-token':token
-    }
-  });
 };
 
 const get = id => {
-  return axios.get(`/todos/${id}`);
+  return instance.get(`/todos/${id}`);
 };
 
 const create = (data) => {
 
-  let token = localStorage.getItem('token') || '';
-  console.log(token)
-  
-  return axios.post("/api/todos", data, {
-      headers: {
-        'x-token':token
-      }
-  }
-  );
+  return instance.post("/api/todos", data, { headers: {'x-token':AUTH_TOKEN} } );
 
 };
 
 const update = (id, data) => {
-  return axios.put(`/todos/${id}`, data);
+  return instance.put(`/todos/${id}`, data);
 };
 
 const remove = id => {
-  return axios.delete(`/todos/${id}`);
+  return instance.delete(`/todos/${id}`);
 };
 
 export default {

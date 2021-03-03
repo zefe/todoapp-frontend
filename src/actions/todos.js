@@ -34,8 +34,7 @@ export const todoAddNew = ( todo ) => {
 
             const res = await todoService.create(todo)
             let resData = res.data.data;
-            console.log(res)
-
+            
             //format createdAt and updatedAt todo
             const newTodoFormated = prepareNewTodo(resData);
             
