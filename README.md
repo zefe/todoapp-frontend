@@ -1,32 +1,70 @@
-# Getting Started with Todo App
+# Todo-webapp
+Web application for insurance broker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-In the project directory, you can run:
+Clone this repo
 
-###   `Install`
-
-```sh
-$ git clone https://github.com/zefe/todoapp-frontend.git
-$ cd todoapp-frontend
-$ npm install -d
 ```
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `Set environment variables`
-
-1.- to change uri API, update the .env.development file in the root directory with the varibles as shown in the following example.
-    Default uri api is http://localhost:4000
-
-```sh
-## CONFIG
-$ REACT_APP_API_URL=
+git clone https://github.com/zefe/todoapp-frontend.git
 ```
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+
+### This project is built with
+
+Node v12.18.4 & npm 6.14.6
+
+### Check that you have node and npm installed
+
+```
+node -v
+```
+
+```
+npm -v
+```
+[To Install Node.js, npm, and stay up-to-date.](https://www.npmjs.com/get-npm)
+
+
+### Installing dependencies
+
+Installing dependencies
+
+```
+yarn
+```
+
+o
+
+```
+yarn install
+```
+
+run development environment
+
+```
+yarn start:dev
+```
+
+run production environment
+
+```
+yarn start:prod
+```
+
+compile the project
+```
+yarn build
+```
+
+[These are some of the most common commands you will need using yarn.](https://classic.yarnpkg.com/en/docs/usage)
+
+### Configuration
+
+Add .env file with the variables provided in the env.example file in the project root directory.
